@@ -9,11 +9,19 @@ const getId = (name) => {
 const getUserId = (name) => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      const id = getId("Jordi");
-    });
+      if (name === "Luis") {
+        reject("I'm sick of you");
+      } else {
+        resolve(Math.floor(Math.random() * (10 - 1 + 1)) + 1);
+      }
+    }, 2000);
   });
+
+  return promise;
 };
 
 function getDataById() {}
 
 function getFinesByDNI() {}
+
+getUserId("Luis").then((successMessage) => {});
